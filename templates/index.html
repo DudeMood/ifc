@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IFC converter</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <script>
+    function uploadFile(event) {
+        event.preventDefault();
+        let formData = new FormData(document.getElementById("uploadForm"));
+
+        fetch("/upload", {
+            method: "POST",
+            body: formData
+        }).then(response => {
+            if (response.redirected) {
+                window.location.href = response.url;
+            } else {
+                return response.json();
+            }
+        }).then(data => {
+            console.log(data);
+        }).catch(error => console.error("Error:", error));
+    }
+  </script>
+</head>
+<body>
+  <div class="main">
+    <div class="header">
+      <a href="https://www.nuce-consulting.de/" class="logo"><img src="../static/images/logo.png" alt=""></a>
+    </div>
+
+    <form class="form" action="/upload" method="post" enctype="multipart/form-data">
+      <input class="input" type="file" name="ifc_file" accept=".ifc" required>
+      <button class="extract" type="submit">Extract</button>
+    </form>
+  </div>
+</body>
+</html>

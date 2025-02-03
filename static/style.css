@@ -1,0 +1,52 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 870px;
+  height: 260px;
+  background-color: #8DA1C2;
+  margin: 200px auto auto;
+  padding: 10px;
+}
+
+.header {
+  height: 100px;
+  width: auto;
+  background-color: #fff;
+  box-shadow: 0px 6px 8px #00000038;
+}
+
+.logo {
+  display: flex;
+  width: 100px;
+  height: 100px;
+}
+
+.form {
+  display: flex;
+  margin: auto;
+  gap: 20px;
+}
+
+.input {
+  font-size: 30px;
+  background-color: #1A3352;
+  padding: 15px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 6px 6px 8px #00000038;
+}
+
+.extract {
+  padding: 15px;
+  color: white;
+  font-size: 30px;
+  background-color: #1A3352;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 6px 6px 8px #00000038;
+  transition: transform 0.2s;
+}
+
+.extract:hover {
+  transform: scale(1.1);
+}
